@@ -23,6 +23,11 @@ const transporter = nodemailer.createTransport({
 });
 
 // API endpoint for sending emails
+app.get('/', (req, res) => {
+  console.log("API running");
+  res.json({ message: "API running" });
+});
+
 app.post('/api/contact', async (req, res) => {
   const { name, email, subject, message } = req.body;
   
